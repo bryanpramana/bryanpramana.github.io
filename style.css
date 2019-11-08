@@ -1,0 +1,14 @@
+body{
+    background-image: url("background.jpg");
+    font: size 400px;
+    text-align:center;
+}
+#navbar{
+    background:
+}
+#navbar a{
+    text-decoration: none;
+}
+#eye{
+    width:30vw;
+}
