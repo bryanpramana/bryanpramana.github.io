@@ -1,0 +1,63 @@
+/* ============================================================
+   animations.css — All @keyframes + motion preferences
+   ============================================================ */
+
+@keyframes heroGradient {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes shimmer {
+  0%   { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+@keyframes pulse-dot {
+  0%,  100% { box-shadow: 0 0 12px var(--accent); transform: scale(1); }
+  50%        { box-shadow: 0 0 20px var(--accent-light), 0 0 8px var(--accent); transform: scale(1.25); }
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}
+
+@keyframes bounce {
+  0%,  100% { transform: rotate(45deg) translateY(0); }
+  50%        { transform: rotate(45deg) translateY(6px); }
+}
+
+@keyframes scrollFadeIn {
+  to { opacity: 1; }
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes formSuccess {
+  0%   { opacity: 0; transform: scale(0.9); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+/* ---- Respect prefers-reduced-motion ---- */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration:   0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration:  0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .reveal, .reveal-left, .reveal-right {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  .hero-eyebrow, .hero-h1 .word, .hero-tagline,
+  .hero-pills, .hero-cta { opacity: 1 !important; transform: none !important; }
+
+  .skill-chip, .cert-chip { opacity: 1 !important; transform: none !important; }
+}

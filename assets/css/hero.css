@@ -1,0 +1,188 @@
+/* ============================================================
+   hero.css — Full-viewport hero section
+   ============================================================ */
+
+#hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background: var(--dark);
+}
+
+/* Animated gradient fallback (shown if WebGL unavailable) */
+#hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(-45deg, #080810, #0f0f1a, #1a1a2e, #0d0d20);
+  background-size: 400% 400%;
+  animation: heroGradient 18s ease infinite;
+  z-index: 0;
+}
+
+#hero-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+/* Cursor glow orb */
+#cursor-glow {
+  position: absolute;
+  width: 500px; height: 500px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(108, 99, 255, 0.12) 0%, transparent 70%);
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  opacity: 0;
+  transition: opacity 0.4s;
+}
+
+/* Bottom fade into next section */
+#hero::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 180px;
+  background: linear-gradient(transparent, var(--dark));
+  z-index: 3;
+  pointer-events: none;
+}
+
+/* ---- Content ---- */
+.hero-content {
+  position: relative;
+  z-index: 4;
+  max-width: 780px;
+}
+
+.hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent-light);
+  margin-bottom: 24px;
+  opacity: 0;
+}
+
+.hero-eyebrow::before {
+  content: '';
+  display: block;
+  width: 32px; height: 1px;
+  background: var(--accent);
+}
+
+/* H1 word-by-word animation */
+.hero-h1 {
+  font-size: clamp(2.8rem, 8vw, 6rem);
+  font-weight: 900;
+  line-height: 1.0;
+  letter-spacing: -0.04em;
+  color: var(--text-light);
+  margin-bottom: 28px;
+}
+
+.hero-h1 .word {
+  display: inline-block;
+  margin-right: 0.25em;
+  opacity: 0;
+  transform: translateY(60px);
+}
+
+.hero-tagline {
+  font-size: clamp(1.05rem, 2.5vw, 1.35rem);
+  font-weight: 400;
+  color: var(--text-faint);
+  line-height: 1.6;
+  margin-bottom: 40px;
+  max-width: 520px;
+  opacity: 0;
+}
+
+.hero-tagline .shimmer-word {
+  background: linear-gradient(90deg, var(--text-light) 0%, var(--accent-light) 30%, var(--accent-gold) 60%, var(--text-light) 100%);
+  background-size: 250% 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 4s linear infinite;
+  font-weight: 600;
+}
+
+/* ---- Hero pills ---- */
+.hero-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 44px;
+  opacity: 0;
+}
+
+.hero-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 18px;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--dark-border);
+  background: rgba(255, 255, 255, 0.04);
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--text-faint);
+  backdrop-filter: blur(8px);
+}
+
+.hero-pill .dot {
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+/* ---- CTA ---- */
+.hero-cta {
+  opacity: 0;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+/* ---- Scroll indicator ---- */
+.scroll-indicator {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 4;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  opacity: 0;
+  animation: scrollFadeIn 1s 2.5s forwards;
+}
+
+.scroll-indicator span {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  color: var(--text-faint);
+  text-transform: uppercase;
+}
+
+.scroll-chevron {
+  width: 20px; height: 20px;
+  border-right: 2px solid var(--accent);
+  border-bottom: 2px solid var(--accent);
+  transform: rotate(45deg);
+  animation: bounce 1.8s ease-in-out infinite;
+}

@@ -1,0 +1,122 @@
+/* ============================================================
+   skills.css — Skill chips, categories, certifications
+   ============================================================ */
+
+#skills {
+  background: var(--surface);
+  padding: var(--section-pad) 0;
+  color: var(--text-dark);
+}
+
+.skills-header {
+  text-align: center;
+  margin-bottom: 72px;
+}
+
+.skills-header .section-title { color: var(--text-dark); }
+.skills-header .section-sub   { color: var(--text-muted); margin: 12px auto 0; }
+
+/* ---- Category block ---- */
+.skill-category { margin-bottom: 48px; }
+
+.skill-category-label {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 18px;
+}
+
+/* ---- Chips ---- */
+.skill-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.skill-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 18px;
+  border-radius: var(--radius-pill);
+  background: var(--surface-card);
+  border: 1px solid var(--surface-border);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--text-dark);
+  cursor: default;
+  /* Initial GSAP state */
+  opacity: 0;
+  transform: translateY(20px);
+  transition: transform var(--transition), box-shadow var(--transition),
+              border-color var(--transition), color var(--transition);
+}
+
+.skill-chip .chip-icon {
+  font-size: 1.05rem;
+  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.skill-chip:hover {
+  transform: translateY(-3px) rotate(1.5deg);
+  box-shadow: 0 8px 24px rgba(108, 99, 255, 0.20);
+  border-color: rgba(108, 99, 255, 0.35);
+  color: var(--accent-dark);
+}
+
+.skill-chip:hover .chip-icon {
+  transform: rotate(-12deg) scale(1.2);
+}
+
+/* ---- Certifications ---- */
+.certs-row {
+  margin-top: 56px;
+  padding-top: 48px;
+  border-top: 1px solid var(--surface-border);
+}
+
+.cert-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.cert-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 22px;
+  border-radius: var(--radius-card);
+  background: linear-gradient(135deg, #fff, #f0f0ff);
+  border: 1px solid rgba(108, 99, 255, 0.20);
+  box-shadow: 0 4px 16px rgba(108, 99, 255, 0.08);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--accent-dark);
+  /* Initial GSAP state */
+  opacity: 0;
+  transform: translateY(20px);
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.cert-chip:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 28px rgba(108, 99, 255, 0.20);
+}
+
+.cert-badge {
+  width: 28px; height: 28px;
+  border-radius: 50%;
+  background: var(--accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  color: #fff;
+  font-weight: 700;
+  flex-shrink: 0;
+}
