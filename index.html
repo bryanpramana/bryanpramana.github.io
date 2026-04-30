@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Bryan Rendra Pramana — DevOps Engineer & Team Lead. Cloud infrastructure, Kubernetes, multi-cloud, and automation." />
+  <meta name="author" content="Bryan Rendra Pramana" />
+  <meta property="og:title" content="Bryan Rendra Pramana | DevOps Engineer" />
+  <meta property="og:description" content="DevOps Engineer & Team Lead at SAP Canada. Building cloud infrastructure that scales." />
+  <meta property="og:type" content="website" />
+  <title>Bryan Rendra Pramana | DevOps Engineer</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+</head>
+<body>
+
+  <!-- ======================================================
+       NAVIGATION
+       ====================================================== -->
+  <nav id="nav">
+    <div class="container nav-inner">
+      <a href="#hero" class="nav-logo">
+        <span></span>
+        Bryan Pramana
+      </a>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile menu overlay -->
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="#about"      class="mm-link">About</a>
+    <a href="#experience" class="mm-link">Experience</a>
+    <a href="#skills"     class="mm-link">Skills</a>
+    <a href="#projects"   class="mm-link">Projects</a>
+    <a href="#contact"    class="mm-link">Contact</a>
+  </div>
+
+  <!-- ======================================================
+       HERO
+       ====================================================== -->
+  <section id="hero">
+    <canvas id="hero-canvas"></canvas>
+    <div id="cursor-glow"></div>
+
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-eyebrow">DevOps Engineer &amp; Team Lead</div>
+
+        <h1 class="hero-h1" id="hero-h1">
+          <!-- Words injected by JS for word-by-word animation -->
+        </h1>
+
+        <p class="hero-tagline">
+          Building cloud infrastructure that
+          <span class="shimmer-word">scales.</span><br>
+          Multi-cloud. Kubernetes. Automation. Observability.
+        </p>
+
+        <div class="hero-pills">
+          <span class="hero-pill"><span class="dot"></span>4+ Years Experience</span>
+          <span class="hero-pill"><span class="dot"></span>Multi-Cloud Engineer</span>
+          <span class="hero-pill"><span class="dot"></span>Team Lead</span>
+        </div>
+
+        <div class="hero-cta">
+          <a href="#experience" class="btn-primary">
+            View My Work
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="scroll-indicator">
+      <span>Scroll</span>
+      <div class="scroll-chevron"></div>
+    </div>
+  </section>
+
+  <!-- ======================================================
+       ABOUT
+       ====================================================== -->
+  <section id="about">
+    <div class="container">
+      <div class="about-grid">
+
+        <!-- Text side -->
+        <div class="about-text reveal">
+          <span class="section-label">About Me</span>
+          <h2 class="section-title">Engineer.<br>Leader.<br>Builder.</h2>
+          <p class="about-bio">
+            I'm a DevOps Engineer and Team Lead at SAP Canada, based in Vancouver. I specialize in cloud
+            infrastructure at scale — designing provisioning pipelines, orchestrating Kubernetes environments
+            across multi-cloud platforms, and driving observability across pre-production systems.
+          </p>
+          <p class="about-bio">
+            With a background in both engineering and business analysis, I bridge the gap between deep
+            technical execution and strategic delivery — working closely with engineering, product, and
+            FinOps stakeholders to build systems that are reliable, cost-efficient, and production-ready.
+          </p>
+          <p class="about-bio">
+            Outside of my core role, I build internal tooling from scratch — most recently a desktop
+            cluster health dashboard used by the team for day-to-day operations management.
+          </p>
+          <div class="about-tags">
+            <span class="about-tag">Kubernetes</span>
+            <span class="about-tag">Multi-Cloud</span>
+            <span class="about-tag">CI/CD Pipelines</span>
+            <span class="about-tag">Observability</span>
+            <span class="about-tag">Python Automation</span>
+            <span class="about-tag">Team Leadership</span>
+          </div>
+        </div>
+
+        <!-- Terminal card -->
+        <div class="reveal" style="transition-delay:0.15s">
+          <div class="terminal-card">
+            <div class="terminal-bar">
+              <div class="t-dot red"></div>
+              <div class="t-dot amber"></div>
+              <div class="t-dot green"></div>
+              <span class="terminal-title">bryan@cloud:~</span>
+            </div>
+            <div class="terminal-body" id="terminal-body">
+              <span class="prompt">$ </span><span class="cmd" id="terminal-text"></span><span class="terminal-cursor"></span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================
+       EXPERIENCE
+       ====================================================== -->
+  <section id="experience">
+    <div class="container">
+      <div class="experience-header reveal">
+        <span class="section-label">Professional Experience</span>
+        <h2 class="section-title">Where I've Worked</h2>
+      </div>
+
+      <div class="timeline">
+        <div class="timeline-spine">
+          <div class="timeline-spine-fill" id="spine-fill"></div>
+        </div>
+
+        <!-- Item 1 — SAP Canada -->
+        <div class="timeline-item">
+          <div class="tl-card reveal-left">
+            <div class="tl-company">SAP Canada Inc.</div>
+            <div class="tl-role">DevOps Engineer Team Lead</div>
+            <div class="tl-meta">
+              <span>Jan 2025 – Present</span>
+              <span class="sep"></span>
+              <span>Vancouver, Canada</span>
+            </div>
+            <ul class="tl-bullets">
+              <li>Led end-to-end cloud provisioning pipelines enabling customer sandbox commercialization across Premium and Base tiers at scale.</li>
+              <li>Drove 300+ environment migrations from legacy data center to SAP hyperscaler cloud, enhancing scalability, reliability, and performance.</li>
+              <li>Delivered Dynatrace observability across non-production and staging environments; reduced team ticket resolution time by 75% through targeted upskilling.</li>
+            </ul>
+            <div class="tl-tags">
+              <span class="tl-tag">Kubernetes</span>
+              <span class="tl-tag">SAP Gardener</span>
+              <span class="tl-tag">Dynatrace</span>
+              <span class="tl-tag">GCP</span>
+              <span class="tl-tag">Azure</span>
+              <span class="tl-tag">ArgoCD</span>
+            </div>
+          </div>
+          <div class="tl-dot"><div class="tl-dot-inner"></div></div>
+          <div class="tl-empty"></div>
+        </div>
+
+        <!-- Item 2 — SAP America -->
+        <div class="timeline-item">
+          <div class="tl-empty"></div>
+          <div class="tl-dot"><div class="tl-dot-inner"></div></div>
+          <div class="tl-card reveal-right">
+            <div class="tl-company">SAP America Inc.</div>
+            <div class="tl-role">DevOps Engineer</div>
+            <div class="tl-meta">
+              <span>Jun 2021 – Dec 2024</span>
+              <span class="sep"></span>
+              <span>New York, USA</span>
+            </div>
+            <ul class="tl-bullets">
+              <li>Maintained and managed 1,000+ virtual machines across hybrid cloud IaaS and PaaS infrastructures, ensuring consistent performance and reliability.</li>
+              <li>Improved CI/CD pipelines to streamline code deployment and automate testing; led key projects to implement centralized Jira and ServiceNow workflows.</li>
+            </ul>
+            <div class="tl-tags">
+              <span class="tl-tag">Azure</span>
+              <span class="tl-tag">CI/CD</span>
+              <span class="tl-tag">ServiceNow</span>
+              <span class="tl-tag">IaC</span>
+              <span class="tl-tag">Docker</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 3 — BAT -->
+        <div class="timeline-item">
+          <div class="tl-card reveal-left">
+            <div class="tl-company">British American Tobacco</div>
+            <div class="tl-role">IT Business Analyst Intern</div>
+            <div class="tl-meta">
+              <span>Jul 2020 – Jan 2021</span>
+              <span class="sep"></span>
+              <span>East Java, Indonesia</span>
+            </div>
+            <ul class="tl-bullets">
+              <li>Served as Product Owner in a Data Warehouse Modernization project, managing backlogs for 50+ team members across global teams.</li>
+              <li>Implemented Enterprise Data Platform using Power BI, automating 10,000+ manual working hours and delivering Citizen Data Analyst enablement for 30+ people.</li>
+            </ul>
+            <div class="tl-tags">
+              <span class="tl-tag">Azure DevOps</span>
+              <span class="tl-tag">Power BI</span>
+              <span class="tl-tag">Snowflake</span>
+              <span class="tl-tag">Kafka</span>
+              <span class="tl-tag">SFTP</span>
+            </div>
+          </div>
+          <div class="tl-dot"><div class="tl-dot-inner"></div></div>
+          <div class="tl-empty"></div>
+        </div>
+
+        <!-- Item 4 — IQ4 -->
+        <div class="timeline-item">
+          <div class="tl-empty"></div>
+          <div class="tl-dot"><div class="tl-dot-inner"></div></div>
+          <div class="tl-card reveal-right">
+            <div class="tl-company">IQ4</div>
+            <div class="tl-role">Cyber Threat Analyst Intern</div>
+            <div class="tl-meta">
+              <span>Jan 2020 – Feb 2020</span>
+              <span class="sep"></span>
+              <span>New York, USA</span>
+            </div>
+            <ul class="tl-bullets">
+              <li>Analyzed cybersecurity incidents across fraud, sabotage, IP theft, and espionage using NIST and NICE frameworks.</li>
+              <li>Supported executive-level communication on threat detection, response, and recovery operations.</li>
+            </ul>
+            <div class="tl-tags">
+              <span class="tl-tag">NIST</span>
+              <span class="tl-tag">Threat Analysis</span>
+              <span class="tl-tag">Incident Response</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================
+       SKILLS
+       ====================================================== -->
+  <section id="skills">
+    <div class="container">
+      <div class="skills-header reveal">
+        <span class="section-label">Capabilities</span>
+        <h2 class="section-title">Technical Arsenal</h2>
+        <p class="section-sub">Tools, platforms, and languages I use to build and operate cloud systems at scale.</p>
+      </div>
+
+      <!-- Cloud & Infrastructure -->
+      <div class="skill-category">
+        <div class="skill-category-label">Cloud &amp; Infrastructure</div>
+        <div class="skill-chips" data-stagger>
+          <span class="skill-chip"><span class="chip-icon">☁️</span>Azure</span>
+          <span class="skill-chip"><span class="chip-icon">🌐</span>Google Cloud</span>
+          <span class="skill-chip"><span class="chip-icon">🌿</span>SAP Gardener</span>
+          <span class="skill-chip"><span class="chip-icon">🐳</span>Docker</span>
+          <span class="skill-chip"><span class="chip-icon">⎈</span>Kubernetes</span>
+          <span class="skill-chip"><span class="chip-icon">🪖</span>Helm</span>
+          <span class="skill-chip"><span class="chip-icon">🔁</span>Velero</span>
+        </div>
+      </div>
+
+      <!-- Observability -->
+      <div class="skill-category">
+        <div class="skill-category-label">Observability &amp; Monitoring</div>
+        <div class="skill-chips" data-stagger>
+          <span class="skill-chip"><span class="chip-icon">📊</span>Dynatrace</span>
+          <span class="skill-chip"><span class="chip-icon">🔍</span>Splunk</span>
+          <span class="skill-chip"><span class="chip-icon">🔎</span>Elastic</span>
+          <span class="skill-chip"><span class="chip-icon">🌞</span>SolarWinds</span>
+          <span class="skill-chip"><span class="chip-icon">📈</span>Sumo Logic</span>
+        </div>
+      </div>
+
+      <!-- Automation & CI/CD -->
+      <div class="skill-category">
+        <div class="skill-category-label">Automation &amp; CI/CD</div>
+        <div class="skill-chips" data-stagger>
+          <span class="skill-chip"><span class="chip-icon">🔀</span>Argo Workflows</span>
+          <span class="skill-chip"><span class="chip-icon">🔄</span>ArgoCD</span>
+          <span class="skill-chip"><span class="chip-icon">⚡</span>GitHub Actions</span>
+          <span class="skill-chip"><span class="chip-icon">🕐</span>ActiveBatch</span>
+          <span class="skill-chip"><span class="chip-icon">🔧</span>Ivanti</span>
+        </div>
+      </div>
+
+      <!-- Data & DB -->
+      <div class="skill-category">
+        <div class="skill-category-label">Data &amp; Databases</div>
+        <div class="skill-chips" data-stagger>
+          <span class="skill-chip"><span class="chip-icon">❄️</span>Snowflake</span>
+          <span class="skill-chip"><span class="chip-icon">🗄️</span>SQL / MSSQL</span>
+          <span class="skill-chip"><span class="chip-icon">📉</span>Power BI</span>
+        </div>
+      </div>
+
+      <!-- Languages & Tools -->
+      <div class="skill-category">
+        <div class="skill-category-label">Languages &amp; Developer Tools</div>
+        <div class="skill-chips" data-stagger>
+          <span class="skill-chip"><span class="chip-icon">🐍</span>Python</span>
+          <span class="skill-chip"><span class="chip-icon">💙</span>PowerShell</span>
+          <span class="skill-chip"><span class="chip-icon">🖥️</span>Bash</span>
+          <span class="skill-chip"><span class="chip-icon">☕</span>Java</span>
+          <span class="skill-chip"><span class="chip-icon">🛠️</span>kubectl</span>
+          <span class="skill-chip"><span class="chip-icon">🌐</span>HTML / CSS</span>
+        </div>
+      </div>
+
+      <!-- Certifications -->
+      <div class="certs-row reveal">
+        <div class="skill-category-label">Certifications &amp; Training</div>
+        <div class="cert-chips">
+          <div class="cert-chip">
+            <div class="cert-badge">AHF</div>
+            Agility Health Facilitator
+          </div>
+          <div class="cert-chip">
+            <div class="cert-badge">SA</div>
+            Certified SAFe 5 Practitioner
+          </div>
+          <div class="cert-chip">
+            <div class="cert-badge">MK</div>
+            McKinsey Business Leadership
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ======================================================
+       PROJECTS
+       ====================================================== -->
+  <section id="projects">
+    <div class="container">
+      <div class="projects-header reveal">
+        <span class="section-label">Selected Work</span>
+        <h2 class="section-title">What I Build</h2>
+        <p class="section-sub">Beyond day-to-day operations — tools and systems built to solve real problems at scale.</p>
+      </div>
+
+      <div class="projects-grid">
+
+        <!-- Project 1 — fg-vision -->
+        <div class="project-card reveal-left">
+          <div class="project-num">01 / Internal Tool</div>
+          <h3 class="project-name">fg-vision (FLAIR)</h3>
+          <p class="project-desc">
+            A native desktop cluster health dashboard built for the SAP Fieldglass
+            Environment Management team. Provides real-time visibility into Kubernetes
+            cluster health, SSO checks, Velero backup status, ArgoCD sync state, and
+            Argo Workflow execution — directly via the Gardener API.
+          </p>
+          <div class="project-tags">
+            <span class="project-tag">Python</span>
+            <span class="project-tag">Kubernetes API</span>
+            <span class="project-tag">SAP Gardener</span>
+            <span class="project-tag">CustomTkinter</span>
+            <span class="project-tag">ArgoCD</span>
+          </div>
+          <div class="project-footer">
+            <span class="project-badge">🔒 Private / Internal Tool</span>
+          </div>
+        </div>
+
+        <!-- Project 2 — Cloud Provisioning Pipeline -->
+        <div class="project-card reveal-right">
+          <div class="project-num">02 / Platform Engineering</div>
+          <h3 class="project-name">Cloud Provisioning Pipeline</h3>
+          <p class="project-desc">
+            End-to-end cloud infrastructure provisioning pipeline built at SAP Canada,
+            enabling automated customer sandbox delivery across Premium and Base tiers.
+            Architected for multi-region scale with isolated databases, FinOps governance,
+            and self-service configuration.
+          </p>
+          <div class="project-tags">
+            <span class="project-tag">SAP Gardener</span>
+            <span class="project-tag">Kubernetes</span>
+            <span class="project-tag">GitHub Actions</span>
+            <span class="project-tag">ArgoCD</span>
+            <span class="project-tag">Azure / GCP</span>
+          </div>
+          <div class="project-footer">
+            <span class="project-badge">🏢 SAP Internal</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================
+       CONTACT
+       ====================================================== -->
+  <section id="contact">
+    <div class="container">
+      <div class="contact-inner reveal">
+        <h2 class="contact-headline">
+          Let's <span class="accent-word">connect.</span>
+        </h2>
+        <p class="contact-sub">
+          Open to new opportunities, collaborations, and conversations.<br>
+          Whether it's cloud infrastructure, DevOps, or building something new.
+        </p>
+        <div class="contact-links">
+          <a href="mailto:bryanrendra98@gmail.com" class="contact-link">
+            <span class="link-icon">✉️</span>
+            Email
+          </a>
+          <a href="https://www.linkedin.com/in/bryanpramana/" target="_blank" rel="noopener" class="contact-link">
+            <span class="link-icon">💼</span>
+            LinkedIn
+          </a>
+          <a href="https://github.com/bryanpramana" target="_blank" rel="noopener" class="contact-link">
+            <span class="link-icon">🐙</span>
+            GitHub
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================
+       FOOTER
+       ====================================================== -->
+  <footer>
+    <div class="container footer-inner">
+      <span class="footer-copy">© 2025 Bryan Rendra Pramana</span>
+      <span class="footer-made">Built with <span>♥</span> and plain HTML</span>
+    </div>
+  </footer>
+
+  <!-- ======================================================
+       SCRIPTS
+       ====================================================== -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
