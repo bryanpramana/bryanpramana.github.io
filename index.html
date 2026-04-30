@@ -55,6 +55,8 @@
   <link rel="stylesheet" href="assets/css/projects.css" />
   <link rel="stylesheet" href="assets/css/contact.css" />
   <link rel="stylesheet" href="assets/css/responsive.css" />
+  <link rel="stylesheet" href="assets/css/cursor.css" />
+  <link rel="stylesheet" href="assets/css/preloader.css" />
 
   <!-- ── Analytics (Plausible — privacy friendly, no cookies) ── -->
   <script defer data-domain="bryanpramana.github.io" src="https://plausible.io/js/script.js"></script>
@@ -79,6 +81,22 @@
 </head>
 
 <body>
+
+  <!-- ══════════════════════════════════════════════════════════
+       PRELOADER
+       ══════════════════════════════════════════════════════════ -->
+  <div id="preloader" role="status" aria-label="Loading">
+    <div class="preloader-counter" id="preloader-counter">0</div>
+    <div class="preloader-bar-wrap"><div class="preloader-bar" id="preloader-bar"></div></div>
+    <div class="preloader-label">Loading</div>
+  </div>
+
+  <!-- Custom cursor (hidden on touch via CSS) -->
+  <div class="cursor-dot"  id="cursor-dot"  aria-hidden="true"></div>
+  <div class="cursor-ring" id="cursor-ring" aria-hidden="true"></div>
+
+  <!-- Film grain overlay (fixed, pointer-events:none) -->
+  <div class="grain-overlay" aria-hidden="true"></div>
 
   <!-- ══════════════════════════════════════════════════════════
        NAVIGATION
@@ -533,15 +551,17 @@
   </footer>
 
   <!-- ══════════════════════════════════════════════════════════
-       SCRIPTS (load order: data → Three.js → GSAP → ui)
+       SCRIPTS (load order: data → preloader → Three → GSAP → ui modules → cursor)
        ══════════════════════════════════════════════════════════ -->
   <script src="assets/js/data.js"></script>
+  <script src="assets/js/preloader.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
   <script src="assets/js/hero-scene.js"></script>
   <script src="assets/js/animations.js"></script>
   <script src="assets/js/ui.js"></script>
+  <script src="assets/js/cursor.js"></script>
 
 </body>
 </html>

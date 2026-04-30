@@ -150,7 +150,11 @@
 
     camera.position.x += (mouse.x * cfg.parallaxStrength - camera.position.x) * cfg.parallaxEase;
     camera.position.y += (-mouse.y * cfg.parallaxStrength - camera.position.y) * cfg.parallaxEase;
-    scene.position.y   = -scrollY * cfg.scrollParallax;
+
+    const sY = scrollY;
+    scene.position.y  = -sY * cfg.scrollParallax;
+    scene.rotation.y  = sY * 0.0003;
+    camera.position.z = cfg.cameraZ - sY * 0.04;
 
     renderer.render(scene, camera);
   }
